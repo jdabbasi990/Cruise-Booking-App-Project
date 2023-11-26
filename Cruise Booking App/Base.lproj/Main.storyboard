@@ -156,41 +156,343 @@
             </objects>
             <point key="canvasLocation" x="320.93023255813955" y="-3.218884120171674"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="I6k-jj-qDN">
             <objects>
-                <viewController id="CaF-oe-aGW" customClass="DashboardViewController" customModule="Cruise_Booking_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A95-Yw-TDQ">
+                <viewController id="CaF-oe-aGW" customClass="AuthViewController" customModule="Cruise_Booking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="A95-Yw-TDQ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DashBoard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yT-5g-de2">
-                                <rect key="frame" x="158" y="403" width="115" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-E5-JIj">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <subviews>
+                                    <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSQ-97-zfv">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="1200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authenticity" translatesAutoresizingMaskIntoConstraints="NO" id="zQn-Ae-edv">
+                                                <rect key="frame" x="166" y="28" width="98" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="j6L-fZ-mt6"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPb-qP-zKN">
+                                                <rect key="frame" x="40" y="178" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="IjQ-RO-uCi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="38"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQt-LG-GYo" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="258" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CV6-CK-xHv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-xw-56w" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="338" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CPB-fb-DYc"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-sJ-Xqg" customClass="CustomButton" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="468" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Tv4-qX-53C"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="LOGIN">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="OnLoginButton:" destination="CaF-oe-aGW" eventType="touchUpInside" id="KFI-fu-P0q"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered yet?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRa-PY-trd">
+                                                <rect key="frame" x="40" y="558" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="YB7-3K-FVa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBM-GN-Y8X">
+                                                <rect key="frame" x="40" y="558" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="LIX-bQ-3o5"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <segue destination="sit-H1-aJv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="08A-oV-TUL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="pRa-PY-trd" firstAttribute="leading" secondItem="aSQ-97-zfv" secondAttribute="leading" constant="40" id="03D-Qv-ViT"/>
+                                            <constraint firstAttribute="trailing" secondItem="oBM-GN-Y8X" secondAttribute="trailing" constant="40" id="0B8-Fj-AxA"/>
+                                            <constraint firstItem="vQt-LG-GYo" firstAttribute="leading" secondItem="aSQ-97-zfv" secondAttribute="leading" constant="40" id="4iJ-Cf-M0A"/>
+                                            <constraint firstItem="zQn-Ae-edv" firstAttribute="top" secondItem="aSQ-97-zfv" secondAttribute="top" constant="28" id="Bwc-lw-kaU"/>
+                                            <constraint firstItem="oBM-GN-Y8X" firstAttribute="leading" secondItem="aSQ-97-zfv" secondAttribute="leading" constant="40" id="Dvt-tR-EM4"/>
+                                            <constraint firstItem="1UI-xw-56w" firstAttribute="leading" secondItem="aSQ-97-zfv" secondAttribute="leading" constant="40" id="HIG-BH-9tN"/>
+                                            <constraint firstItem="pRa-PY-trd" firstAttribute="top" secondItem="Vna-sJ-Xqg" secondAttribute="bottom" constant="40" id="Mbn-3O-VeW"/>
+                                            <constraint firstItem="oBM-GN-Y8X" firstAttribute="top" secondItem="Vna-sJ-Xqg" secondAttribute="bottom" constant="40" id="Reg-o6-ebL"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZPb-qP-zKN" secondAttribute="trailing" constant="40" id="Tu1-Q7-Rql"/>
+                                            <constraint firstAttribute="trailing" secondItem="zQn-Ae-edv" secondAttribute="trailing" constant="166" id="WIt-6l-Qfm"/>
+                                            <constraint firstItem="vQt-LG-GYo" firstAttribute="top" secondItem="ZPb-qP-zKN" secondAttribute="bottom" constant="30" id="bJA-pE-XGO"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vna-sJ-Xqg" secondAttribute="trailing" constant="40" id="g45-R2-L8h"/>
+                                            <constraint firstItem="Vna-sJ-Xqg" firstAttribute="leading" secondItem="aSQ-97-zfv" secondAttribute="leading" constant="40" id="hEw-eQ-pxn"/>
+                                            <constraint firstItem="zQn-Ae-edv" firstAttribute="leading" secondItem="aSQ-97-zfv" secondAttribute="leading" constant="166" id="k8g-Rd-sM6"/>
+                                            <constraint firstItem="ZPb-qP-zKN" firstAttribute="leading" secondItem="aSQ-97-zfv" secondAttribute="leading" constant="40" id="mmI-HR-Sng"/>
+                                            <constraint firstAttribute="trailing" secondItem="vQt-LG-GYo" secondAttribute="trailing" constant="40" id="pUa-Kf-S1m"/>
+                                            <constraint firstItem="ZPb-qP-zKN" firstAttribute="top" secondItem="zQn-Ae-edv" secondAttribute="bottom" constant="30" id="spd-hU-RhL"/>
+                                            <constraint firstAttribute="height" constant="1200" id="vSy-UL-FYN"/>
+                                            <constraint firstAttribute="trailing" secondItem="pRa-PY-trd" secondAttribute="trailing" constant="40" id="x0i-kj-ttA"/>
+                                            <constraint firstAttribute="trailing" secondItem="1UI-xw-56w" secondAttribute="trailing" constant="40" id="x14-dN-s2Y"/>
+                                            <constraint firstItem="Vna-sJ-Xqg" firstAttribute="top" secondItem="1UI-xw-56w" secondAttribute="bottom" constant="80" id="xbH-p5-ZQy"/>
+                                            <constraint firstItem="1UI-xw-56w" firstAttribute="top" secondItem="vQt-LG-GYo" secondAttribute="bottom" constant="30" id="xbh-CL-ydT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aSQ-97-zfv" secondAttribute="trailing" id="Myj-KW-u9T"/>
+                                    <constraint firstAttribute="bottom" secondItem="aSQ-97-zfv" secondAttribute="bottom" id="VN7-rm-FbU"/>
+                                    <constraint firstItem="aSQ-97-zfv" firstAttribute="top" secondItem="OdB-E5-JIj" secondAttribute="top" id="Yxz-1F-T6C"/>
+                                    <constraint firstItem="aSQ-97-zfv" firstAttribute="leading" secondItem="OdB-E5-JIj" secondAttribute="leading" id="xd0-m5-hk0"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lGa-SM-v6W"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="OdB-E5-JIj" firstAttribute="leading" secondItem="lGa-SM-v6W" secondAttribute="leading" id="5hf-F6-7Ud"/>
+                            <constraint firstItem="OdB-E5-JIj" firstAttribute="bottom" secondItem="lGa-SM-v6W" secondAttribute="bottom" id="9xa-Wp-k5x"/>
+                            <constraint firstItem="OdB-E5-JIj" firstAttribute="trailing" secondItem="lGa-SM-v6W" secondAttribute="trailing" id="B5E-gE-NCR"/>
+                            <constraint firstItem="OdB-E5-JIj" firstAttribute="top" secondItem="lGa-SM-v6W" secondAttribute="top" id="CyW-YA-AH2"/>
+                            <constraint firstItem="aSQ-97-zfv" firstAttribute="height" secondItem="A95-Yw-TDQ" secondAttribute="height" multiplier="1.28755" id="G2f-H2-L5M"/>
+                            <constraint firstItem="aSQ-97-zfv" firstAttribute="width" secondItem="A95-Yw-TDQ" secondAttribute="width" id="RuU-Zy-Cef"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kaz-LG-ZDd"/>
+                    <size key="freeformSize" width="430" height="932"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="vQt-LG-GYo" id="sf9-zk-yMj"/>
+                        <outlet property="passwordTextField" destination="1UI-xw-56w" id="GR6-ed-x3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEm-4K-fS8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1465.1162790697674" y="-3.8626609442060089"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="pKI-VS-HKY">
+            <objects>
+                <viewController id="sit-H1-aJv" customClass="RegisterViewController" customModule="Cruise_Booking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ncM-TT-TTQ">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXt-Ub-hyE">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-Nm-52u">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="1200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online-registration" translatesAutoresizingMaskIntoConstraints="NO" id="cvA-WP-C71">
+                                                <rect key="frame" x="151" y="28" width="128" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="pfT-vt-5Yu"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register/Signup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1P-3X-ukU">
+                                                <rect key="frame" x="40" y="178" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="w1V-8c-BcM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="38"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVm-Ug-F1n" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="266" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="xp7-hQ-6z8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aug-Tm-ncw" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="346" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="pvG-iH-Q8u"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M5k-hE-lDh" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="426" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="7QU-ZA-7CY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQz-F2-ntx" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="506" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="lKx-z0-3Eo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efJ-7a-YgU" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="586" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="tOg-mg-muH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dci-VB-XWN" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="666" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="mqt-69-yR6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2K-oS-YYF" customClass="CustomTextField" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="746" width="350" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="SEq-fK-K15"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-Wv-moH" customClass="CustomButton" customModule="Cruise_Booking_App" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="896" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="OY8-zg-ihO"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="SIGNUP">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BACK TO LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D15-oR-zT3">
+                                                <rect key="frame" x="40" y="986" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="htl-ED-8Rs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X90-Yq-faA">
+                                                <rect key="frame" x="40" y="986" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="HdB-Gq-VEm"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <segue destination="CaF-oe-aGW" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="a1a-UG-yrO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wiS-Wv-moH" secondAttribute="trailing" constant="40" id="2GI-mi-Fvs"/>
+                                            <constraint firstAttribute="trailing" secondItem="aug-Tm-ncw" secondAttribute="trailing" constant="40" id="5yb-In-iqc"/>
+                                            <constraint firstAttribute="trailing" secondItem="cvA-WP-C71" secondAttribute="trailing" constant="151" id="9ui-BS-zv3"/>
+                                            <constraint firstItem="M5k-hE-lDh" firstAttribute="top" secondItem="aug-Tm-ncw" secondAttribute="bottom" constant="30" id="AQS-Nu-MJi"/>
+                                            <constraint firstItem="efJ-7a-YgU" firstAttribute="top" secondItem="RQz-F2-ntx" secondAttribute="bottom" constant="30" id="Bmg-bR-rP3"/>
+                                            <constraint firstItem="T2K-oS-YYF" firstAttribute="top" secondItem="dci-VB-XWN" secondAttribute="bottom" constant="30" id="DdO-BP-gkB"/>
+                                            <constraint firstItem="wiS-Wv-moH" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="F5q-CP-uIi"/>
+                                            <constraint firstAttribute="trailing" secondItem="X90-Yq-faA" secondAttribute="trailing" constant="40" id="FRP-gK-sjr"/>
+                                            <constraint firstAttribute="height" constant="1200" id="FgH-36-bih"/>
+                                            <constraint firstItem="dci-VB-XWN" firstAttribute="top" secondItem="efJ-7a-YgU" secondAttribute="bottom" constant="30" id="GAP-Ir-pfM"/>
+                                            <constraint firstItem="X90-Yq-faA" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="Gxg-tj-9ls"/>
+                                            <constraint firstAttribute="trailing" secondItem="RQz-F2-ntx" secondAttribute="trailing" constant="40" id="JmI-nz-Y7R"/>
+                                            <constraint firstItem="M5k-hE-lDh" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="KOD-K5-FYM"/>
+                                            <constraint firstItem="FVm-Ug-F1n" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="Mj4-dD-alE"/>
+                                            <constraint firstItem="D15-oR-zT3" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="O2c-Tv-vbR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y1P-3X-ukU" secondAttribute="trailing" constant="40" id="OaE-dW-OgE"/>
+                                            <constraint firstItem="cvA-WP-C71" firstAttribute="top" secondItem="o5U-Nm-52u" secondAttribute="top" constant="28" id="Pab-pQ-FYP"/>
+                                            <constraint firstAttribute="trailing" secondItem="T2K-oS-YYF" secondAttribute="trailing" constant="40" id="S9f-HV-JTr"/>
+                                            <constraint firstAttribute="trailing" secondItem="dci-VB-XWN" secondAttribute="trailing" constant="40" id="SlS-7I-9tm"/>
+                                            <constraint firstItem="D15-oR-zT3" firstAttribute="top" secondItem="wiS-Wv-moH" secondAttribute="bottom" constant="40" id="Uof-xf-D95"/>
+                                            <constraint firstItem="wiS-Wv-moH" firstAttribute="top" secondItem="T2K-oS-YYF" secondAttribute="bottom" constant="30" id="bsW-MQ-2se"/>
+                                            <constraint firstAttribute="trailing" secondItem="FVm-Ug-F1n" secondAttribute="trailing" constant="40" id="cFq-ah-niL"/>
+                                            <constraint firstItem="FVm-Ug-F1n" firstAttribute="top" secondItem="Y1P-3X-ukU" secondAttribute="bottom" constant="38" id="cX9-2G-PY5"/>
+                                            <constraint firstItem="Y1P-3X-ukU" firstAttribute="top" secondItem="cvA-WP-C71" secondAttribute="bottom" constant="30" id="e5P-XK-Vqk"/>
+                                            <constraint firstItem="Y1P-3X-ukU" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="fWp-bK-arn"/>
+                                            <constraint firstItem="cvA-WP-C71" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="151" id="h3Y-jF-mgh"/>
+                                            <constraint firstAttribute="trailing" secondItem="M5k-hE-lDh" secondAttribute="trailing" constant="40" id="khG-5c-Tay"/>
+                                            <constraint firstItem="RQz-F2-ntx" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="mfa-ux-o96"/>
+                                            <constraint firstItem="RQz-F2-ntx" firstAttribute="top" secondItem="M5k-hE-lDh" secondAttribute="bottom" constant="30" id="o71-KV-zyi"/>
+                                            <constraint firstItem="aug-Tm-ncw" firstAttribute="top" secondItem="FVm-Ug-F1n" secondAttribute="bottom" constant="30" id="php-oA-wk4"/>
+                                            <constraint firstItem="dci-VB-XWN" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="plY-dT-9M0"/>
+                                            <constraint firstAttribute="trailing" secondItem="efJ-7a-YgU" secondAttribute="trailing" constant="40" id="t2X-Cy-p5P"/>
+                                            <constraint firstItem="T2K-oS-YYF" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="xgl-5a-sVk"/>
+                                            <constraint firstItem="aug-Tm-ncw" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="yAe-k7-Z1d"/>
+                                            <constraint firstAttribute="trailing" secondItem="D15-oR-zT3" secondAttribute="trailing" constant="40" id="yoI-2Q-Ed5"/>
+                                            <constraint firstItem="X90-Yq-faA" firstAttribute="top" secondItem="wiS-Wv-moH" secondAttribute="bottom" constant="40" id="z7a-qD-R80"/>
+                                            <constraint firstItem="efJ-7a-YgU" firstAttribute="leading" secondItem="o5U-Nm-52u" secondAttribute="leading" constant="40" id="zUH-EE-uYa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="o5U-Nm-52u" firstAttribute="top" secondItem="uXt-Ub-hyE" secondAttribute="top" id="t82-DD-GwU"/>
+                                    <constraint firstAttribute="bottom" secondItem="o5U-Nm-52u" secondAttribute="bottom" id="xaD-qk-NhH"/>
+                                    <constraint firstAttribute="trailing" secondItem="o5U-Nm-52u" secondAttribute="trailing" id="z09-wn-gpO"/>
+                                    <constraint firstItem="o5U-Nm-52u" firstAttribute="leading" secondItem="uXt-Ub-hyE" secondAttribute="leading" id="zKr-tj-cLA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7xW-MH-oor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="o5U-Nm-52u" firstAttribute="width" secondItem="ncM-TT-TTQ" secondAttribute="width" id="B69-XM-EXu"/>
+                            <constraint firstItem="o5U-Nm-52u" firstAttribute="height" secondItem="ncM-TT-TTQ" secondAttribute="height" multiplier="1.28755" id="DBh-lN-hyU"/>
+                            <constraint firstItem="uXt-Ub-hyE" firstAttribute="bottom" secondItem="7xW-MH-oor" secondAttribute="bottom" id="FB1-Be-2tK"/>
+                            <constraint firstItem="uXt-Ub-hyE" firstAttribute="trailing" secondItem="7xW-MH-oor" secondAttribute="trailing" id="ILy-Rt-lZz"/>
+                            <constraint firstItem="uXt-Ub-hyE" firstAttribute="leading" secondItem="7xW-MH-oor" secondAttribute="leading" id="Kyv-cB-AnD"/>
+                            <constraint firstItem="uXt-Ub-hyE" firstAttribute="top" secondItem="7xW-MH-oor" secondAttribute="top" id="Pnm-JK-IQ3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sVM-DX-LDa"/>
+                    <size key="freeformSize" width="430" height="932"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCm-gC-CaK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455.8139534883721" y="-3.218884120171674"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="08A-oV-TUL"/>
+        <segue reference="a1a-UG-yrO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Steering_wheel_ship" width="1154" height="1155"/>
         <image name="anchor_rotate" width="512" height="512"/>
+        <image name="authenticity" width="512" height="512"/>
         <image name="logo2" width="2000" height="919"/>
+        <image name="online-registration" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
