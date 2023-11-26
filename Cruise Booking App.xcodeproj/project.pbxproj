@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		19C1589B2B056363002373DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589A2B056363002373DD /* AppDelegate.swift */; };
 		19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589C2B056363002373DD /* SceneDelegate.swift */; };
-		19C1589F2B056363002373DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589E2B056363002373DD /* ViewController.swift */; };
+		19C1589F2B056363002373DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589E2B056363002373DD /* HomeViewController.swift */; };
 		19C158A22B056363002373DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C158A02B056363002373DD /* Main.storyboard */; };
 		19C158A42B056365002373DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C158A32B056365002373DD /* Assets.xcassets */; };
 		19C158A72B056365002373DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C158A52B056365002373DD /* LaunchScreen.storyboard */; };
+		19C158AF2B056737002373DD /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C158AE2B056737002373DD /* SplashViewController.swift */; };
+		19C158B22B057147002373DD /* gear1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19C158B12B057147002373DD /* gear1.mp3 */; };
+		19C158B42B057154002373DD /* gear2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19C158B32B057154002373DD /* gear2.mp3 */; };
+		19C158B62B05715D002373DD /* Ship_horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19C158B52B05715D002373DD /* Ship_horn.mp3 */; };
+		19C158B82B06ED9B002373DD /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C158B72B06ED9B002373DD /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19C158972B056363002373DD /* Cruise Booking App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cruise Booking App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1589A2B056363002373DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C1589C2B056363002373DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19C1589E2B056363002373DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19C1589E2B056363002373DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		19C158A12B056363002373DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19C158A32B056365002373DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19C158A62B056365002373DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19C158A82B056365002373DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C158AE2B056737002373DD /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		19C158B12B057147002373DD /* gear1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gear1.mp3; path = ../../../../Downloads/gear1.mp3; sourceTree = "<group>"; };
+		19C158B32B057154002373DD /* gear2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gear2.mp3; path = ../../../../Downloads/gear2.mp3; sourceTree = "<group>"; };
+		19C158B52B05715D002373DD /* Ship_horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Ship_horn.mp3; path = ../../../../Downloads/Ship_horn.mp3; sourceTree = "<group>"; };
+		19C158B72B06ED9B002373DD /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,26 @@
 			children = (
 				19C1589A2B056363002373DD /* AppDelegate.swift */,
 				19C1589C2B056363002373DD /* SceneDelegate.swift */,
-				19C1589E2B056363002373DD /* ViewController.swift */,
+				19C1589E2B056363002373DD /* HomeViewController.swift */,
+				19C158AE2B056737002373DD /* SplashViewController.swift */,
+				19C158B72B06ED9B002373DD /* DashboardViewController.swift */,
 				19C158A02B056363002373DD /* Main.storyboard */,
+				19C158B02B0570F1002373DD /* Music */,
 				19C158A32B056365002373DD /* Assets.xcassets */,
 				19C158A52B056365002373DD /* LaunchScreen.storyboard */,
 				19C158A82B056365002373DD /* Info.plist */,
 			);
 			path = "Cruise Booking App";
+			sourceTree = "<group>";
+		};
+		19C158B02B0570F1002373DD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				19C158B52B05715D002373DD /* Ship_horn.mp3 */,
+				19C158B32B057154002373DD /* gear2.mp3 */,
+				19C158B12B057147002373DD /* gear1.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +151,9 @@
 				19C158A72B056365002373DD /* LaunchScreen.storyboard in Resources */,
 				19C158A42B056365002373DD /* Assets.xcassets in Resources */,
 				19C158A22B056363002373DD /* Main.storyboard in Resources */,
+				19C158B62B05715D002373DD /* Ship_horn.mp3 in Resources */,
+				19C158B42B057154002373DD /* gear2.mp3 in Resources */,
+				19C158B22B057147002373DD /* gear1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C1589F2B056363002373DD /* ViewController.swift in Sources */,
+				19C1589F2B056363002373DD /* HomeViewController.swift in Sources */,
 				19C1589B2B056363002373DD /* AppDelegate.swift in Sources */,
+				19C158B82B06ED9B002373DD /* DashboardViewController.swift in Sources */,
 				19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */,
+				19C158AF2B056737002373DD /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
