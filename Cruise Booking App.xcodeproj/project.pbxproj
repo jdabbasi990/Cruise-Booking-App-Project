@@ -13,6 +13,9 @@
 		19A8196C2B13EE0800DAB2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8196B2B13EE0800DAB2EE /* Constants.swift */; };
 		19A8196E2B14019C00DAB2EE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */; };
 		19A819752B14320400DAB2EE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A819702B142CC400DAB2EE /* libsqlite3.0.tbd */; };
+		19A819782B14390300DAB2EE /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819772B14390300DAB2EE /* Customer.swift */; };
+		19A8197D2B14482200DAB2EE /* CustomerDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8197C2B14482200DAB2EE /* CustomerDBManager.swift */; };
+		19A8197F2B15018800DAB2EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8197E2B15018800DAB2EE /* ProfileViewController.swift */; };
 		19C1589B2B056363002373DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589A2B056363002373DD /* AppDelegate.swift */; };
 		19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589C2B056363002373DD /* SceneDelegate.swift */; };
 		19C1589F2B056363002373DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589E2B056363002373DD /* HomeViewController.swift */; };
@@ -34,6 +37,9 @@
 		19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		19A819702B142CC400DAB2EE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		19A819732B142FE500DAB2EE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		19A819772B14390300DAB2EE /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		19A8197C2B14482200DAB2EE /* CustomerDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDBManager.swift; sourceTree = "<group>"; };
+		19A8197E2B15018800DAB2EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		19C158972B056363002373DD /* Cruise Booking App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cruise Booking App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1589A2B056363002373DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C1589C2B056363002373DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		19A819762B14383400DAB2EE /* Database_Files */ = {
+			isa = PBXGroup;
+			children = (
+				19A819772B14390300DAB2EE /* Customer.swift */,
+				19A8197C2B14482200DAB2EE /* CustomerDBManager.swift */,
+			);
+			path = Database_Files;
+			sourceTree = "<group>";
+		};
 		19C1588E2B056363002373DD = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +114,7 @@
 		19C158992B056363002373DD /* Cruise Booking App */ = {
 			isa = PBXGroup;
 			children = (
+				19A819762B14383400DAB2EE /* Database_Files */,
 				19A819662B13ED4600DAB2EE /* CustomViews */,
 				19C1589A2B056363002373DD /* AppDelegate.swift */,
 				19C1589C2B056363002373DD /* SceneDelegate.swift */,
@@ -107,6 +123,7 @@
 				19A8196B2B13EE0800DAB2EE /* Constants.swift */,
 				19C158AE2B056737002373DD /* SplashViewController.swift */,
 				19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */,
+				19A8197E2B15018800DAB2EE /* ProfileViewController.swift */,
 				19C158B72B06ED9B002373DD /* DashboardViewController.swift */,
 				19C158A02B056363002373DD /* Main.storyboard */,
 				19C158B02B0570F1002373DD /* Music */,
@@ -206,9 +223,12 @@
 				19C1589B2B056363002373DD /* AppDelegate.swift in Sources */,
 				19C158B82B06ED9B002373DD /* DashboardViewController.swift in Sources */,
 				19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */,
+				19A8197D2B14482200DAB2EE /* CustomerDBManager.swift in Sources */,
 				19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */,
 				19A819682B13ED8200DAB2EE /* CustomButton.swift in Sources */,
+				19A819782B14390300DAB2EE /* Customer.swift in Sources */,
 				19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */,
+				19A8197F2B15018800DAB2EE /* ProfileViewController.swift in Sources */,
 				19C158AF2B056737002373DD /* SplashViewController.swift in Sources */,
 				19A8196C2B13EE0800DAB2EE /* Constants.swift in Sources */,
 			);
