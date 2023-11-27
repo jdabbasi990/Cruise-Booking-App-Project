@@ -297,14 +297,14 @@
         <scene sceneID="pKI-VS-HKY">
             <objects>
                 <viewController id="sit-H1-aJv" customClass="RegisterViewController" customModule="Cruise_Booking_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ncM-TT-TTQ">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="ncM-TT-TTQ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXt-Ub-hyE">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXt-Ub-hyE">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-Nm-52u">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-Nm-52u">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="1200"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online-registration" translatesAutoresizingMaskIntoConstraints="NO" id="cvA-WP-C71">
@@ -479,7 +479,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="08A-oV-TUL"/>
         <segue reference="a1a-UG-yrO"/>
     </inferredMetricsTieBreakers>
     <resources>

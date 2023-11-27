@@ -12,6 +12,7 @@
 		19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819692B13EDF300DAB2EE /* CustomTextField.swift */; };
 		19A8196C2B13EE0800DAB2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8196B2B13EE0800DAB2EE /* Constants.swift */; };
 		19A8196E2B14019C00DAB2EE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */; };
+		19A819752B14320400DAB2EE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A819702B142CC400DAB2EE /* libsqlite3.0.tbd */; };
 		19C1589B2B056363002373DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589A2B056363002373DD /* AppDelegate.swift */; };
 		19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589C2B056363002373DD /* SceneDelegate.swift */; };
 		19C1589F2B056363002373DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1589E2B056363002373DD /* HomeViewController.swift */; };
@@ -31,6 +32,8 @@
 		19A819692B13EDF300DAB2EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		19A8196B2B13EE0800DAB2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		19A819702B142CC400DAB2EE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		19A819732B142FE500DAB2EE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		19C158972B056363002373DD /* Cruise Booking App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cruise Booking App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1589A2B056363002373DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C1589C2B056363002373DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,10 +50,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		19C158942B056363002373DD /* Frameworks */ = {
+		19A819722B142FB600DAB2EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19A819752B14320400DAB2EE /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,11 +70,21 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		19A8196F2B142CC300DAB2EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19A819732B142FE500DAB2EE /* libsqlite3.tbd */,
+				19A819702B142CC400DAB2EE /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		19C1588E2B056363002373DD = {
 			isa = PBXGroup;
 			children = (
 				19C158992B056363002373DD /* Cruise Booking App */,
 				19C158982B056363002373DD /* Products */,
+				19A8196F2B142CC300DAB2EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,8 +135,8 @@
 			buildConfigurationList = 19C158AB2B056365002373DD /* Build configuration list for PBXNativeTarget "Cruise Booking App" */;
 			buildPhases = (
 				19C158932B056363002373DD /* Sources */,
-				19C158942B056363002373DD /* Frameworks */,
 				19C158952B056363002373DD /* Resources */,
+				19A819722B142FB600DAB2EE /* Frameworks */,
 			);
 			buildRules = (
 			);
