@@ -151,36 +151,50 @@ class CustomerDBManager {
         sqlite3_finalize(deleteStatement)
     }
     
+
     func update(customer: Customer) {
-          let updateStatementString = "UPDATE Customer SET fullName = ?, email = ?, password = ?, number = ?, country = ?, userName = ?, address = ? WHERE id = ?;"
+        let updateStatementString = "UPDATE Customer SET fullName = ?, email = ?, password = ?, number = ?, country = ?, userName = ?, address = ? WHERE id = ?;"
 
-          var updateStatement: OpaquePointer? = nil
+        var updateStatement: OpaquePointer? = nil
 
-          if sqlite3_prepare_v2(db, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK {
-              sqlite3_bind_text(updateStatement, 1, (customer.fullName as NSString?)?.utf8String, -1, nil)
-              sqlite3_bind_text(updateStatement, 2, (customer.email as NSString?)?.utf8String, -1, nil)
-              sqlite3_bind_text(updateStatement, 3, (customer.password as NSString?)?.utf8String, -1, nil)
-              sqlite3_bind_text(updateStatement, 4, (customer.number as NSString?)?.utf8String, -1, nil)
-              sqlite3_bind_text(updateStatement, 5, (customer.country as NSString?)?.utf8String, -1, nil)
-              sqlite3_bind_text(updateStatement, 6, (customer.userName as NSString?)?.utf8String, -1, nil)
-              sqlite3_bind_text(updateStatement, 7, (customer.address as NSString?)?.utf8String, -1, nil)
-              sqlite3_bind_int(updateStatement, 8, Int32(customer.id))
+        if sqlite3_prepare_v2(db, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK {
+            sqlite3_bind_text(updateStatement, 1, (customer.fullName as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 2, (customer.email as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 3, (customer.password as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 4, (customer.number as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 5, (customer.country as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 6, (customer.userName as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 7, (customer.address as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_int(updateStatement, 8, Int32(customer.id))
 
-              if sqlite3_step(updateStatement) == SQLITE_DONE {
-                  print("Customer updated successfully!")
-                  // Read all records again after updating a customer
-                  let updatedCustomers = read()
-                  print("All Records After Updating:")
-                  for customer in updatedCustomers {
-                      print("\(customer.id) | \(customer.fullName ?? "N/A") | \(customer.email ?? "N/A") | \(customer.password ?? "N/A") | \(customer.number ?? "N/A") | \(customer.country ?? "N/A") | \(customer.userName ?? "N/A") | \(customer.address ?? "N/A")")
-                  }
-              } else {
-                  print("Couldn't update customer!")
-              }
-          } else {
-              print("UPDATE statement failed to succeed!!!")
-          }
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                print("Customer updated successfully!")
+            } else {
+                print("Couldn't update customer.")
+            }
+        } else {
+            print("UPDATE statement failed to succeed!")
+        }
 
-          sqlite3_finalize(updateStatement)
-      }
+        sqlite3_finalize(updateStatement)
+    }
+    
+    func customerExists(email: String, password: String) -> Bool {
+        var queryStatement: OpaquePointer?
+        let query = "SELECT * FROM Customer WHERE email = ? AND password = ?;"
+        
+        if sqlite3_prepare_v2(db, query, -1, &queryStatement, nil) == SQLITE_OK {
+            sqlite3_bind_text(queryStatement, 1, (email as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(queryStatement, 2, (password as NSString).utf8String, -1, nil)
+
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                // A matching customer was found
+                sqlite3_finalize(queryStatement)
+                return true
+            }
+        }
+        
+        sqlite3_finalize(queryStatement)
+        return false
+    }
 }

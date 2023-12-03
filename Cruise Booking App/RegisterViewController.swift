@@ -29,40 +29,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         countryTextEdit.inputAccessoryView = createToolbar()
     }
 
-//    @IBAction func registerButtonTapped(_ sender: Any) {
-//        guard let fullName = fullNameTextEdit.text, !fullName.isEmpty,
-//              let email = emailTextEdit.text, !email.isEmpty,
-//              let password = passwordTextEdit.text, !password.isEmpty,
-//              let phone = phoneTextEdit.text, !phone.isEmpty,
-//              let country = countryTextEdit.text, !country.isEmpty,
-//              let userName = userNameTextEdit.text, !userName.isEmpty,
-//              let address = addressTextEdit.text, !address.isEmpty else {
-//            showAlert(message: "Please fill in all fields.")
-//            return
-//        }
-//
-//        // Assuming you have initialized CustomerDBManager somewhere in your class
-//        let customerDBManager = CustomerDBManager()
-//
-//        // Create a Customer object without setting the ID
-//        let customer = Customer(id: 0, fullName: fullName, email: email, password: password, number: phone, country: country, userName: userName, address: address)
-//
-//        // Insert the customer into the database
-//        customerDBManager.insert(customer: customer)
-//
-//        // Show a success message
-//        showAlert(message: "User has been added successfully.")
-//        
-//        //Performing Seague to Profile Screen
-//
-//    }
-//
-//    func showAlert(message: String) {
-//        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alert.addAction(okAction)
-//        present(alert, animated: true, completion: nil)
-//    } working prevoius code
+
     
     @IBAction func registerButtonTapped(_ sender: Any) {
         guard let fullName = fullNameTextEdit.text, !fullName.isEmpty,
@@ -88,7 +55,16 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Show a success message
         showAlert(message: "User has been added successfully.") {
             // Perform segue when OK button is pressed
-            self.performSegue(withIdentifier: "ProfileScreen", sender: nil)
+            self.performSegue(withIdentifier: "ProfileScreen", sender: customer)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProfileScreen" {
+            if let destinationVC = segue.destination as? ProfileViewController,
+               let customer = sender as? Customer {
+                destinationVC.customer = customer
+            }
         }
     }
 

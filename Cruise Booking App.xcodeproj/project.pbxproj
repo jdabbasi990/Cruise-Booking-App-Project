@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190E3A5A2B1D1E9400B8ACFB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */; };
 		19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819642B13E82B00DAB2EE /* AuthViewController.swift */; };
 		19A819682B13ED8200DAB2EE /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819672B13ED8200DAB2EE /* CustomButton.swift */; };
 		19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819692B13EDF300DAB2EE /* CustomTextField.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		19A819642B13E82B00DAB2EE /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		19A819672B13ED8200DAB2EE /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		19A819692B13EDF300DAB2EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				19C158A32B056365002373DD /* Assets.xcassets */,
 				19C158A52B056365002373DD /* LaunchScreen.storyboard */,
 				19C158A82B056365002373DD /* Info.plist */,
+				190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */,
 			);
 			path = "Cruise Booking App";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */,
 				19A8197F2B15018800DAB2EE /* ProfileViewController.swift in Sources */,
 				19C158AF2B056737002373DD /* SplashViewController.swift in Sources */,
+				190E3A5A2B1D1E9400B8ACFB /* BookingViewController.swift in Sources */,
 				19A8196C2B13EE0800DAB2EE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
