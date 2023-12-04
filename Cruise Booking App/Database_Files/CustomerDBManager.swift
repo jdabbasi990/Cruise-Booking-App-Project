@@ -24,26 +24,81 @@ class CustomerDBManager {
             return db
         }
     }
+    
+//
+//    func createTable() {
+//        let createTableString = "CREATE TABLE IF NOT EXISTS Customer (id INTEGER PRIMARY KEY, fullName TEXT, email TEXT, password TEXT, number TEXT, country TEXT, userName TEXT, address TEXT);"
+//
+//        var createTableStatement: OpaquePointer? = nil
+//
+//        if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
+//            if sqlite3_step(createTableStatement) == SQLITE_DONE {
+//                print("Customer table created successfully!")
+//            } else {
+//                print("Customer table failed!")
+//            }
+//        } else {
+//            print("Failed to perform CREATE TABLE statement.")
+//        }
+//
+//        sqlite3_finalize(createTableStatement)
+//    }
 
     func createTable() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Customer (id INTEGER PRIMARY KEY, fullName TEXT, email TEXT, password TEXT, number TEXT, country TEXT, userName TEXT, address TEXT);"
+        let createCustomerTableString = """
+        CREATE TABLE IF NOT EXISTS Customer (
+            id INTEGER PRIMARY KEY,
+            fullName TEXT,
+            email TEXT,
+            password TEXT,
+            number TEXT,
+            country TEXT,
+            userName TEXT,
+            address TEXT
+        );
+        """
 
+        let createBookingTableString = """
+        CREATE TABLE IF NOT EXISTS Booking (
+            id INTEGER PRIMARY KEY,
+            customerName TEXT,
+            customerEmail TEXT,
+            customerPhone TEXT,
+            customerAddress TEXT,
+            numberOfAdults INTEGER,
+            numberOfMinors INTEGER,
+            numberOfSeniors INTEGER,
+            cruisePackage INTEGER,
+            departureDate TEXT
+        );
+        """
+
+        // Create the Customer table
         var createTableStatement: OpaquePointer? = nil
-
-        if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(db, createCustomerTableString, -1, &createTableStatement, nil) == SQLITE_OK {
             if sqlite3_step(createTableStatement) == SQLITE_DONE {
                 print("Customer table created successfully!")
             } else {
-                print("Customer table failed!")
+                print("Customer table creation failed!")
             }
         } else {
-            print("Failed to perform CREATE TABLE statement.")
+            print("Failed to perform CREATE TABLE statement for Customer.")
         }
+        sqlite3_finalize(createTableStatement)
 
+        // Create the Booking table
+        createTableStatement = nil
+        if sqlite3_prepare_v2(db, createBookingTableString, -1, &createTableStatement, nil) == SQLITE_OK {
+            if sqlite3_step(createTableStatement) == SQLITE_DONE {
+                print("Booking table created successfully!")
+            } else {
+                print("Booking table creation failed!")
+            }
+        } else {
+            print("Failed to perform CREATE TABLE statement for Booking.")
+        }
         sqlite3_finalize(createTableStatement)
     }
-
-
 
     func insert(customer: Customer) {
         
@@ -196,5 +251,51 @@ class CustomerDBManager {
         
         sqlite3_finalize(queryStatement)
         return false
+    }
+    func insertBooking(booking: Booking) {
+        let insertStatementString = """
+        INSERT INTO Booking (
+            customerName, customerEmail, customerPhone, customerAddress,
+            numberOfAdults, numberOfMinors, numberOfSeniors, cruisePackage, departureDate
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+        """
+        
+        var insertStatement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+            sqlite3_bind_text(insertStatement, 1, (booking.customerName as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 2, (booking.customerEmail as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 3, (booking.customerPhone as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 4, (booking.customerAddress as NSString?)?.utf8String, -1, nil)
+            sqlite3_bind_int(insertStatement, 5, Int32(booking.numberOfAdults))
+            sqlite3_bind_int(insertStatement, 6, Int32(booking.numberOfMinors))
+            sqlite3_bind_int(insertStatement, 7, Int32(booking.numberOfSeniors))
+            sqlite3_bind_int(insertStatement, 8, Int32(booking.cruisePackage))
+            sqlite3_bind_text(insertStatement, 9, (booking.departureDate as NSString).utf8String, -1, nil)
+            
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                // Retrieve the last inserted row ID
+                let lastRowID = sqlite3_last_insert_rowid(db)
+                
+                print("A booking added successfully with ID: \(lastRowID)")
+                // Print the details of the added booking
+                print("Booking Details:")
+                print("Customer Name: \(booking.customerName ?? "N/A")")
+                print("Customer Email: \(booking.customerEmail ?? "N/A")")
+                print("Customer Phone: \(booking.customerPhone ?? "N/A")")
+                print("Customer Address: \(booking.customerAddress ?? "N/A")")
+                print("Number of Adults: \(booking.numberOfAdults)")
+                print("Number of Minors: \(booking.numberOfMinors)")
+                print("Number of Seniors: \(booking.numberOfSeniors)")
+                print("Cruise Package: \(booking.cruisePackage)")
+                print("Departure Date: \(booking.departureDate)")
+            } else {
+                print("Couldn't add any booking row?")
+            }
+        } else {
+            print("INSERT statement failed to succeed!!!")
+        }
+        
+        sqlite3_finalize(insertStatement)
     }
 }

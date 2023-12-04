@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		190E3A5A2B1D1E9400B8ACFB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */; };
+		195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195628CF2B1E55A800C1A8B0 /* Booking.swift */; };
 		19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819642B13E82B00DAB2EE /* AuthViewController.swift */; };
 		19A819682B13ED8200DAB2EE /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819672B13ED8200DAB2EE /* CustomButton.swift */; };
 		19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819692B13EDF300DAB2EE /* CustomTextField.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		195628CF2B1E55A800C1A8B0 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		19A819642B13E82B00DAB2EE /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		19A819672B13ED8200DAB2EE /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		19A819692B13EDF300DAB2EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				19A819772B14390300DAB2EE /* Customer.swift */,
 				19A8197C2B14482200DAB2EE /* CustomerDBManager.swift */,
+				195628CF2B1E55A800C1A8B0 /* Booking.swift */,
 			);
 			path = Database_Files;
 			sourceTree = "<group>";
@@ -126,13 +129,13 @@
 				19C158AE2B056737002373DD /* SplashViewController.swift */,
 				19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */,
 				19A8197E2B15018800DAB2EE /* ProfileViewController.swift */,
+				190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */,
 				19C158B72B06ED9B002373DD /* DashboardViewController.swift */,
 				19C158A02B056363002373DD /* Main.storyboard */,
 				19C158B02B0570F1002373DD /* Music */,
 				19C158A32B056365002373DD /* Assets.xcassets */,
 				19C158A52B056365002373DD /* LaunchScreen.storyboard */,
 				19C158A82B056365002373DD /* Info.plist */,
-				190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */,
 			);
 			path = "Cruise Booking App";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				19A8196E2B14019C00DAB2EE /* RegisterViewController.swift in Sources */,
 				19C1589B2B056363002373DD /* AppDelegate.swift in Sources */,
 				19C158B82B06ED9B002373DD /* DashboardViewController.swift in Sources */,
+				195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */,
 				19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */,
 				19A8197D2B14482200DAB2EE /* CustomerDBManager.swift in Sources */,
 				19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */,
