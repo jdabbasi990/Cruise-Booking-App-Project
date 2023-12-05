@@ -18,6 +18,9 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         commonInit()
     }
+    func getImage() -> UIImage? {
+        return imageView.image
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

@@ -46,6 +46,20 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Perform the segue to FullSizeViewController or present it as needed
         performSegue(withIdentifier: "ShowFullSizeImage", sender: cell)
     }
+
+    // ...
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowFullSizeImage" {
+            // Check if the destination view controller is FullSizeViewController
+            if let fullSizeVC = segue.destination as? FullSizeViewController {
+                // Here, you need to set the fullSizeImage property of FullSizeViewController
+                if let cell = sender as? PhotoCollectionViewCell {
+                    fullSizeVC.fullSizeImage = cell.getImage()
+                }
+            }
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.frame.size.width/3)-3, height: (view.frame.size.width/3)-3)

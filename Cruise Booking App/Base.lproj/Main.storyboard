@@ -807,12 +807,24 @@
                                                     <segue destination="Y2u-hW-XZe" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bL6-HI-2Bn"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXE-fK-jVS">
+                                                <rect key="frame" x="30" y="104" width="370" height="198"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="198" id="jBj-S5-De5"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <segue destination="LpK-Eb-Sw0" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9Jm-9c-UhY"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="i2d-AQ-TJX" secondAttribute="trailing" constant="63" id="251-9V-a63"/>
                                             <constraint firstAttribute="trailing" secondItem="ZFS-QI-ZRy" secondAttribute="trailing" constant="228" id="2sR-O8-lYB"/>
                                             <constraint firstItem="W1G-jj-7EG" firstAttribute="top" secondItem="w3C-VU-Qmj" secondAttribute="bottom" constant="22" id="4rM-CZ-MaH"/>
+                                            <constraint firstAttribute="trailing" secondItem="JXE-fK-jVS" secondAttribute="trailing" constant="30" id="5cN-qn-xQ2"/>
                                             <constraint firstAttribute="trailing" secondItem="eBN-6w-s8b" secondAttribute="trailing" constant="30" id="74l-S2-a6O"/>
                                             <constraint firstAttribute="trailing" secondItem="yfw-Tx-VKO" secondAttribute="trailing" constant="55" id="7ez-iD-kuh"/>
                                             <constraint firstItem="51M-GM-JdJ" firstAttribute="leading" secondItem="Sqh-aK-TD2" secondAttribute="leading" constant="135" id="8cu-Hl-8nb"/>
@@ -837,6 +849,7 @@
                                             <constraint firstItem="M0B-6d-TfP" firstAttribute="top" secondItem="eBN-6w-s8b" secondAttribute="bottom" constant="22" id="dpy-lt-VlR"/>
                                             <constraint firstAttribute="trailing" secondItem="TVp-m7-Feb" secondAttribute="trailing" constant="84" id="eAZ-ui-edf"/>
                                             <constraint firstItem="h38-O8-VdP" firstAttribute="top" secondItem="eBN-6w-s8b" secondAttribute="bottom" constant="22" id="fLg-7a-epm"/>
+                                            <constraint firstItem="JXE-fK-jVS" firstAttribute="leading" secondItem="Sqh-aK-TD2" secondAttribute="leading" constant="30" id="g8i-0a-GnL"/>
                                             <constraint firstItem="W1G-jj-7EG" firstAttribute="leading" secondItem="Sqh-aK-TD2" secondAttribute="leading" constant="135" id="gVk-ij-R5F"/>
                                             <constraint firstAttribute="trailing" secondItem="W1G-jj-7EG" secondAttribute="trailing" constant="135" id="gq7-TA-EYh"/>
                                             <constraint firstItem="6bI-EL-toh" firstAttribute="top" secondItem="eBN-6w-s8b" secondAttribute="bottom" constant="40" id="hH5-eF-TlI"/>
@@ -850,6 +863,7 @@
                                             <constraint firstItem="LCj-Lc-xOB" firstAttribute="top" secondItem="i2d-AQ-TJX" secondAttribute="bottom" constant="40" id="tzr-d5-9wR"/>
                                             <constraint firstAttribute="trailing" secondItem="51M-GM-JdJ" secondAttribute="trailing" constant="135" id="uZP-6I-HHR"/>
                                             <constraint firstAttribute="trailing" secondItem="LCj-Lc-xOB" secondAttribute="trailing" constant="94" id="wp0-5I-wY3"/>
+                                            <constraint firstItem="JXE-fK-jVS" firstAttribute="top" secondItem="67i-VC-f8K" secondAttribute="bottom" constant="30" id="zAw-Ny-kgE"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -878,6 +892,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPA-qG-sHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4162.3255813953492" y="1225.7510729613734"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="Cdo-u9-8SO">
+            <objects>
+                <viewController id="LpK-Eb-Sw0" customClass="GalleryViewController" customModule="Cruise_Booking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o0E-j6-4U2">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hoY-Ml-n3S"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ILE-XX-aCL"/>
+                    <connections>
+                        <segue destination="Vl1-eP-U8g" kind="modal" identifier="ShowFullSizeImage" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ahk-QS-bio"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jb-IG-Kp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5536" y="518"/>
+        </scene>
+        <!--Full Size View Controller-->
+        <scene sceneID="DPt-Il-tdw">
+            <objects>
+                <viewController id="Vl1-eP-U8g" customClass="FullSizeViewController" customModule="Cruise_Booking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KGe-VN-w6j">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Q9c-it-c5M"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CDZ-Uv-X7T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c68-rl-fyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6541" y="518"/>
         </scene>
         <!--Booking View Controller-->
         <scene sceneID="pXP-DQ-fN8">

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		190E3A5A2B1D1E9400B8ACFB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */; };
 		19515AA02B1EF16D0060249E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515A9F2B1EF16D0060249E /* ResultViewController.swift */; };
+		19515AA22B1F82B70060249E /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AA12B1F82B70060249E /* GalleryViewController.swift */; };
+		19515AA42B1F8A680060249E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AA32B1F8A680060249E /* PhotoCollectionViewCell.swift */; };
+		19515AA62B1F9EA90060249E /* FullSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AA52B1F9EA90060249E /* FullSizeViewController.swift */; };
 		195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195628CF2B1E55A800C1A8B0 /* Booking.swift */; };
 		195628D22B1E71EC00C1A8B0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195628D12B1E71EC00C1A8B0 /* PaymentViewController.swift */; };
 		19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819642B13E82B00DAB2EE /* AuthViewController.swift */; };
@@ -36,6 +39,9 @@
 /* Begin PBXFileReference section */
 		190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		19515A9F2B1EF16D0060249E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		19515AA12B1F82B70060249E /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		19515AA32B1F8A680060249E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		19515AA52B1F9EA90060249E /* FullSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSizeViewController.swift; sourceTree = "<group>"; };
 		195628CF2B1E55A800C1A8B0 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		195628D12B1E71EC00C1A8B0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		19A819642B13E82B00DAB2EE /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19515AA72B1FA90C0060249E /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				19515AA52B1F9EA90060249E /* FullSizeViewController.swift */,
+				19515AA32B1F8A680060249E /* PhotoCollectionViewCell.swift */,
+				19515AA12B1F82B70060249E /* GalleryViewController.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		19A819662B13ED4600DAB2EE /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				19A8196B2B13EE0800DAB2EE /* Constants.swift */,
 				19A819672B13ED8200DAB2EE /* CustomButton.swift */,
 				19A819692B13EDF300DAB2EE /* CustomTextField.swift */,
 			);
@@ -123,13 +140,13 @@
 		19C158992B056363002373DD /* Cruise Booking App */ = {
 			isa = PBXGroup;
 			children = (
+				19515AA72B1FA90C0060249E /* Gallery */,
 				19A819762B14383400DAB2EE /* Database_Files */,
 				19A819662B13ED4600DAB2EE /* CustomViews */,
 				19C1589A2B056363002373DD /* AppDelegate.swift */,
 				19C1589C2B056363002373DD /* SceneDelegate.swift */,
 				19C1589E2B056363002373DD /* HomeViewController.swift */,
 				19A819642B13E82B00DAB2EE /* AuthViewController.swift */,
-				19A8196B2B13EE0800DAB2EE /* Constants.swift */,
 				19C158AE2B056737002373DD /* SplashViewController.swift */,
 				19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */,
 				19A8197E2B15018800DAB2EE /* ProfileViewController.swift */,
@@ -234,6 +251,7 @@
 				19A8196E2B14019C00DAB2EE /* RegisterViewController.swift in Sources */,
 				19C1589B2B056363002373DD /* AppDelegate.swift in Sources */,
 				195628D22B1E71EC00C1A8B0 /* PaymentViewController.swift in Sources */,
+				19515AA42B1F8A680060249E /* PhotoCollectionViewCell.swift in Sources */,
 				19C158B82B06ED9B002373DD /* DashboardViewController.swift in Sources */,
 				195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */,
 				19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */,
@@ -241,10 +259,12 @@
 				19515AA02B1EF16D0060249E /* ResultViewController.swift in Sources */,
 				19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */,
 				19A819682B13ED8200DAB2EE /* CustomButton.swift in Sources */,
+				19515AA62B1F9EA90060249E /* FullSizeViewController.swift in Sources */,
 				19A819782B14390300DAB2EE /* Customer.swift in Sources */,
 				19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */,
 				19A8197F2B15018800DAB2EE /* ProfileViewController.swift in Sources */,
 				19C158AF2B056737002373DD /* SplashViewController.swift in Sources */,
+				19515AA22B1F82B70060249E /* GalleryViewController.swift in Sources */,
 				190E3A5A2B1D1E9400B8ACFB /* BookingViewController.swift in Sources */,
 				19A8196C2B13EE0800DAB2EE /* Constants.swift in Sources */,
 			);
