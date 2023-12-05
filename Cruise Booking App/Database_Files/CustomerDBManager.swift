@@ -69,7 +69,8 @@ class CustomerDBManager {
             numberOfMinors INTEGER,
             numberOfSeniors INTEGER,
             cruisePackage INTEGER,
-            departureDate TEXT
+            departureDate TEXT,
+            selectedCruise TEXT
         );
         """
 
@@ -252,16 +253,17 @@ class CustomerDBManager {
         sqlite3_finalize(queryStatement)
         return false
     }
+
     func insertBooking(booking: Booking) {
         let insertStatementString = """
         INSERT INTO Booking (
             customerName, customerEmail, customerPhone, customerAddress,
-            numberOfAdults, numberOfMinors, numberOfSeniors, cruisePackage, departureDate
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+            numberOfAdults, numberOfMinors, numberOfSeniors, cruisePackage, departureDate, selectedCruise
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
         """
-        
+
         var insertStatement: OpaquePointer? = nil
-        
+
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
             sqlite3_bind_text(insertStatement, 1, (booking.customerName as NSString?)?.utf8String, -1, nil)
             sqlite3_bind_text(insertStatement, 2, (booking.customerEmail as NSString?)?.utf8String, -1, nil)
@@ -272,11 +274,12 @@ class CustomerDBManager {
             sqlite3_bind_int(insertStatement, 7, Int32(booking.numberOfSeniors))
             sqlite3_bind_int(insertStatement, 8, Int32(booking.cruisePackage))
             sqlite3_bind_text(insertStatement, 9, (booking.departureDate as NSString).utf8String, -1, nil)
-            
+            sqlite3_bind_text(insertStatement, 10, (booking.selectedCruise! as NSString).utf8String, -1, nil)  // Add this line
+
             if sqlite3_step(insertStatement) == SQLITE_DONE {
                 // Retrieve the last inserted row ID
                 let lastRowID = sqlite3_last_insert_rowid(db)
-                
+
                 print("A booking added successfully with ID: \(lastRowID)")
                 // Print the details of the added booking
                 print("Booking Details:")
@@ -289,13 +292,61 @@ class CustomerDBManager {
                 print("Number of Seniors: \(booking.numberOfSeniors)")
                 print("Cruise Package: \(booking.cruisePackage)")
                 print("Departure Date: \(booking.departureDate)")
+                print("Selected Cruise: \(String(describing: booking.selectedCruise))")  // Add this line
             } else {
                 print("Couldn't add any booking row?")
             }
         } else {
             print("INSERT statement failed to succeed!!!")
         }
-        
+
         sqlite3_finalize(insertStatement)
     }
+    
+    func getLastBooking() -> Booking? {
+        let queryStatementString = "SELECT * FROM Booking ORDER BY id DESC LIMIT 1;"
+
+        var queryStatement: OpaquePointer? = nil
+        var lastBooking: Booking?
+
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                lastBooking = extractBookingFromQuery(queryStatement: queryStatement!)
+            }
+        } else {
+            print("SELECT statement failed to proceed!!!")
+        }
+
+        sqlite3_finalize(queryStatement)
+        return lastBooking
+    }
+
+    private func extractBookingFromQuery(queryStatement: OpaquePointer) -> Booking {
+        let id = sqlite3_column_int(queryStatement, 0)
+        let customerName = String(cString: sqlite3_column_text(queryStatement, 1))
+        let customerEmail = String(cString: sqlite3_column_text(queryStatement, 2))
+        let customerPhone = String(cString: sqlite3_column_text(queryStatement, 3))
+        let customerAddress = String(cString: sqlite3_column_text(queryStatement, 4))
+        let numberOfAdults = Int(sqlite3_column_int(queryStatement, 5))
+        let numberOfMinors = Int(sqlite3_column_int(queryStatement, 6))
+        let numberOfSeniors = Int(sqlite3_column_int(queryStatement, 7))
+        let cruisePackage = Int(sqlite3_column_int(queryStatement, 8))
+        let departureDate = String(cString: sqlite3_column_text(queryStatement, 9))
+        let selectedCruise = String(cString: sqlite3_column_text(queryStatement, 10))
+
+        return Booking(
+            id: Int(id),
+            customerName: customerName,
+            customerEmail: customerEmail,
+            customerPhone: customerPhone,
+            customerAddress: customerAddress,
+            numberOfAdults: numberOfAdults,
+            numberOfMinors: numberOfMinors,
+            numberOfSeniors: numberOfSeniors,
+            cruisePackage: cruisePackage,
+            departureDate: departureDate,
+            selectedCruise: selectedCruise
+        )
+    }
+
 }

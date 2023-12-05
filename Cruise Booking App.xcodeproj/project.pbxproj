@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		190E3A5A2B1D1E9400B8ACFB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */; };
+		19515AA02B1EF16D0060249E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515A9F2B1EF16D0060249E /* ResultViewController.swift */; };
 		195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195628CF2B1E55A800C1A8B0 /* Booking.swift */; };
+		195628D22B1E71EC00C1A8B0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195628D12B1E71EC00C1A8B0 /* PaymentViewController.swift */; };
 		19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819642B13E82B00DAB2EE /* AuthViewController.swift */; };
 		19A819682B13ED8200DAB2EE /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819672B13ED8200DAB2EE /* CustomButton.swift */; };
 		19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819692B13EDF300DAB2EE /* CustomTextField.swift */; };
@@ -33,7 +35,9 @@
 
 /* Begin PBXFileReference section */
 		190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		19515A9F2B1EF16D0060249E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		195628CF2B1E55A800C1A8B0 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		195628D12B1E71EC00C1A8B0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		19A819642B13E82B00DAB2EE /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		19A819672B13ED8200DAB2EE /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		19A819692B13EDF300DAB2EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				19A8196D2B14019C00DAB2EE /* RegisterViewController.swift */,
 				19A8197E2B15018800DAB2EE /* ProfileViewController.swift */,
 				190E3A592B1D1E9300B8ACFB /* BookingViewController.swift */,
+				19515A9F2B1EF16D0060249E /* ResultViewController.swift */,
+				195628D12B1E71EC00C1A8B0 /* PaymentViewController.swift */,
 				19C158B72B06ED9B002373DD /* DashboardViewController.swift */,
 				19C158A02B056363002373DD /* Main.storyboard */,
 				19C158B02B0570F1002373DD /* Music */,
@@ -227,10 +233,12 @@
 				19C1589F2B056363002373DD /* HomeViewController.swift in Sources */,
 				19A8196E2B14019C00DAB2EE /* RegisterViewController.swift in Sources */,
 				19C1589B2B056363002373DD /* AppDelegate.swift in Sources */,
+				195628D22B1E71EC00C1A8B0 /* PaymentViewController.swift in Sources */,
 				19C158B82B06ED9B002373DD /* DashboardViewController.swift in Sources */,
 				195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */,
 				19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */,
 				19A8197D2B14482200DAB2EE /* CustomerDBManager.swift in Sources */,
+				19515AA02B1EF16D0060249E /* ResultViewController.swift in Sources */,
 				19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */,
 				19A819682B13ED8200DAB2EE /* CustomButton.swift in Sources */,
 				19A819782B14390300DAB2EE /* Customer.swift in Sources */,

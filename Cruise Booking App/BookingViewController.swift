@@ -7,61 +7,36 @@
 
 import UIKit
 
-class BookingViewController: UIViewController {
+class BookingViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    
+    @IBOutlet weak var cruisePicker: CustomTextField!
     @IBOutlet weak var nameBookField: CustomTextField!
-    
     @IBOutlet weak var emailBookingField: CustomTextField!
-    
-    
     @IBOutlet weak var phoneBookingField: CustomTextField!
-    
-    
     @IBOutlet weak var addressBookingField: CustomTextField!
-    
-    
     @IBOutlet weak var adultStepper: UIStepper!
-    
-    
-    
     @IBOutlet weak var adultStepperlabel: UILabel!
-    
-    
-    
     @IBOutlet weak var minorStepper: UIStepper!
-    
-    
     @IBOutlet weak var minorStepperLabel: UILabel!
-    
-    
-    
     @IBOutlet weak var sineorsStepper: UIStepper!
-    
-    
     @IBOutlet weak var sineorsStepperLabel: UILabel!
-    
-    
-    
     @IBOutlet weak var cruisePackageSegment: UISegmentedControl!
-    
-    
-    
     @IBOutlet weak var departureDatePicker: UIDatePicker!
-    
-    // Prices for each cruise package
+    var booking: Booking?
+
+
     let silverPrice: Double = 1000
     let goldPrice: Double = 1500
     let diamondPrice: Double = 2000
-    
-    
+    let cruiseOptions = ["Bahamas", "Star", "Coral Reef", "Blue Mist", "Sea Queen"]
+    var cruisePickerView = UIPickerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSteppers()
-
-        // Do any additional setup after loading the view.
+        setupPicker()
     }
-    
+
     private func setupSteppers() {
         adultStepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
         minorStepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
@@ -110,12 +85,49 @@ class BookingViewController: UIViewController {
 
         print("Total Cost: $\(totalCost)")
     }
-    
+
+    private func setupPicker() {
+        cruisePickerView.delegate = self
+        cruisePickerView.dataSource = self
+        cruisePicker.inputView = cruisePickerView
+
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePicker))
+        toolbar.setItems([doneButton], animated: true)
+        cruisePicker.inputAccessoryView = toolbar
+    }
+
+    @objc func donePicker() {
+        view.endEditing(true)
+    }
+
+    // UIPickerViewDataSource methods
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cruiseOptions.count
+    }
+
+    // UIPickerViewDelegate method
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cruiseOptions[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        cruisePicker.text = cruiseOptions[row]
+    }
 
     @IBAction func onBookingClicked(_ sender: Any) {
-        
+        guard let selectedCruise = cruisePicker.text, !selectedCruise.isEmpty else {
+            showAlert(message: "Please select a cruise.")
+            return
+        }
+
         let booking = Booking(
-            id: 0, // You may need to set the correct ID based on your logic
+            id: 0,
             customerName: nameBookField.text,
             customerEmail: emailBookingField.text,
             customerPhone: phoneBookingField.text,
@@ -124,14 +136,33 @@ class BookingViewController: UIViewController {
             numberOfMinors: Int(minorStepper.value),
             numberOfSeniors: Int(sineorsStepper.value),
             cruisePackage: cruisePackageSegment.selectedSegmentIndex,
-            departureDate: departureDatePicker.date.description
+            departureDate: departureDatePicker.date.description,
+            selectedCruise: selectedCruise // Added property for the selected cruise
+
         )
 
         // Assuming you have an instance of CustomerDBManager
         let dbManager = CustomerDBManager()
         dbManager.insertBooking(booking: booking)
+        // Show the success popup
+        showSuccessPopup(message: "Booking added successfully!")
         
     }
-    
 
+    func showSuccessPopup(message: String) {
+        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            // Perform the segue to PaymentViewController
+            self.performSegue(withIdentifier: "PayScreen", sender: self)
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
