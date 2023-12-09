@@ -12,8 +12,12 @@
 		19515AA22B1F82B70060249E /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AA12B1F82B70060249E /* GalleryViewController.swift */; };
 		19515AA42B1F8A680060249E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AA32B1F8A680060249E /* PhotoCollectionViewCell.swift */; };
 		19515AA62B1F9EA90060249E /* FullSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AA52B1F9EA90060249E /* FullSizeViewController.swift */; };
+		19515AAA2B1FC0680060249E /* SearchCruiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AA92B1FC0680060249E /* SearchCruiseViewController.swift */; };
+		19515AAC2B1FC0E00060249E /* SearchCruiseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AAB2B1FC0E00060249E /* SearchCruiseCell.swift */; };
+		19515AAE2B1FCC540060249E /* Cruise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515AAD2B1FCC540060249E /* Cruise.swift */; };
 		195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195628CF2B1E55A800C1A8B0 /* Booking.swift */; };
 		195628D22B1E71EC00C1A8B0 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195628D12B1E71EC00C1A8B0 /* PaymentViewController.swift */; };
+		198E2D122B24E9A10055345C /* CruiseViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E2D112B24E9A10055345C /* CruiseViewDetails.swift */; };
 		19A819652B13E82B00DAB2EE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819642B13E82B00DAB2EE /* AuthViewController.swift */; };
 		19A819682B13ED8200DAB2EE /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819672B13ED8200DAB2EE /* CustomButton.swift */; };
 		19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A819692B13EDF300DAB2EE /* CustomTextField.swift */; };
@@ -42,8 +46,12 @@
 		19515AA12B1F82B70060249E /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		19515AA32B1F8A680060249E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		19515AA52B1F9EA90060249E /* FullSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSizeViewController.swift; sourceTree = "<group>"; };
+		19515AA92B1FC0680060249E /* SearchCruiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCruiseViewController.swift; sourceTree = "<group>"; };
+		19515AAB2B1FC0E00060249E /* SearchCruiseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCruiseCell.swift; sourceTree = "<group>"; };
+		19515AAD2B1FCC540060249E /* Cruise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cruise.swift; sourceTree = "<group>"; };
 		195628CF2B1E55A800C1A8B0 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		195628D12B1E71EC00C1A8B0 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		198E2D112B24E9A10055345C /* CruiseViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseViewDetails.swift; sourceTree = "<group>"; };
 		19A819642B13E82B00DAB2EE /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		19A819672B13ED8200DAB2EE /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		19A819692B13EDF300DAB2EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -89,6 +97,17 @@
 				19515AA12B1F82B70060249E /* GalleryViewController.swift */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		19515AA82B1FBFF20060249E /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				19515AA92B1FC0680060249E /* SearchCruiseViewController.swift */,
+				19515AAB2B1FC0E00060249E /* SearchCruiseCell.swift */,
+				19515AAD2B1FCC540060249E /* Cruise.swift */,
+				198E2D112B24E9A10055345C /* CruiseViewDetails.swift */,
+			);
+			path = "Table View";
 			sourceTree = "<group>";
 		};
 		19A819662B13ED4600DAB2EE /* CustomViews */ = {
@@ -140,6 +159,7 @@
 		19C158992B056363002373DD /* Cruise Booking App */ = {
 			isa = PBXGroup;
 			children = (
+				19515AA82B1FBFF20060249E /* Table View */,
 				19515AA72B1FA90C0060249E /* Gallery */,
 				19A819762B14383400DAB2EE /* Database_Files */,
 				19A819662B13ED4600DAB2EE /* CustomViews */,
@@ -253,8 +273,11 @@
 				195628D22B1E71EC00C1A8B0 /* PaymentViewController.swift in Sources */,
 				19515AA42B1F8A680060249E /* PhotoCollectionViewCell.swift in Sources */,
 				19C158B82B06ED9B002373DD /* DashboardViewController.swift in Sources */,
+				198E2D122B24E9A10055345C /* CruiseViewDetails.swift in Sources */,
+				19515AAC2B1FC0E00060249E /* SearchCruiseCell.swift in Sources */,
 				195628D02B1E55A800C1A8B0 /* Booking.swift in Sources */,
 				19C1589D2B056363002373DD /* SceneDelegate.swift in Sources */,
+				19515AAA2B1FC0680060249E /* SearchCruiseViewController.swift in Sources */,
 				19A8197D2B14482200DAB2EE /* CustomerDBManager.swift in Sources */,
 				19515AA02B1EF16D0060249E /* ResultViewController.swift in Sources */,
 				19A8196A2B13EDF300DAB2EE /* CustomTextField.swift in Sources */,
@@ -266,6 +289,7 @@
 				19C158AF2B056737002373DD /* SplashViewController.swift in Sources */,
 				19515AA22B1F82B70060249E /* GalleryViewController.swift in Sources */,
 				190E3A5A2B1D1E9400B8ACFB /* BookingViewController.swift in Sources */,
+				19515AAE2B1FCC540060249E /* Cruise.swift in Sources */,
 				19A8196C2B13EE0800DAB2EE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

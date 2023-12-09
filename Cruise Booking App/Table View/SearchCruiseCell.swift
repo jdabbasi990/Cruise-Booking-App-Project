@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import UIKit
+
+class SearchCruiseCell: UITableViewCell{
+    
+
+    @IBOutlet weak var cruiseName: UILabel!
+    
+    
+    @IBOutlet weak var cruiseImage: UIImageView!
+    
+}

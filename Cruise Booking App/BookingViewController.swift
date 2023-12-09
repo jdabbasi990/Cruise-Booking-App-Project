@@ -9,6 +9,9 @@ import UIKit
 
 class BookingViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    
+    
+    
     @IBOutlet weak var cruisePicker: CustomTextField!
     @IBOutlet weak var nameBookField: CustomTextField!
     @IBOutlet weak var emailBookingField: CustomTextField!
@@ -43,6 +46,11 @@ class BookingViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         sineorsStepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
         cruisePackageSegment.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
     }
+    
+    
+
+    
+    
 
     @objc private func stepperValueChanged(_ sender: UIStepper) {
         // Update corresponding labels based on the stepper value

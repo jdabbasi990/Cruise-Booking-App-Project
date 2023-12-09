@@ -20,6 +20,8 @@ class CruiseViewDetails: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        name.text = selectedCruise.id + " - " + selectedCruise.name
+        image.image = UIImage(named: selectedCruise.imageName)
     }
     
 
